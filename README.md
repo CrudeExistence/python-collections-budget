@@ -13,6 +13,7 @@
     `python -m pip install -r requirements.txt`
 
 # Module 1
+# python -m budget.FrequentExpenses
 ## Count Purchases by Category
 ### Verify module: 
     To run tests run: pytest -k "module1" -s
