@@ -1,5 +1,6 @@
 # import budget.Expense
-from . import Expense
+# from . import Expense
+import Expense
 
 
 class BudgetList:
@@ -12,7 +13,7 @@ class BudgetList:
 
     def append(self, item):
         if self.sum_expenses + item < self.budget:
-            self.budget.append(item)
+            self.expenses.append(item)
             self.sum_expenses += item
         else:
             self.overages.append(item)
@@ -25,7 +26,7 @@ def main():
     myBudgetList = BudgetList(1200)
     # expenses = budget.Expense.Expenses()
     expenses = Expense.Expenses()
-    expenses.read_expenses('data/spending_data.csv')
+    expenses.read_expenses('../data/spending_data.csv')
 
     for expense in expenses.list:
         myBudgetList.append(expense.amount)
