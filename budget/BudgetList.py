@@ -1,6 +1,10 @@
 # import budget.Expense
 # from . import Expense
-import Expense
+if __name__ == "__main__":
+    import Expense
+else:
+    from . import Expense
+
 
 
 class BudgetList:
@@ -26,7 +30,7 @@ def main():
     myBudgetList = BudgetList(1200)
     # expenses = budget.Expense.Expenses()
     expenses = Expense.Expenses()
-    expenses.read_expenses('../data/spending_data.csv')
+    expenses.read_expenses('data/spending_data.csv')
 
     for expense in expenses.list:
         myBudgetList.append(expense.amount)
